@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import exam.service.Service;
 import exam.vo.Subject;
 
+// 학생: 수강신청 과목 리스트
 public class EnrollSubjectListController implements Controller {
 
 	@Override

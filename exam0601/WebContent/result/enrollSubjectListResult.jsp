@@ -18,7 +18,7 @@ td {
 }
 </style>
 <body>
-	<h3>등록한 과목 리스트</h3>
+	<h1>등록한 과목 리스트</h1>
 
 	<%
 		ArrayList<Subject> list = (ArrayList<Subject>)request.getAttribute("list");
@@ -30,7 +30,7 @@ td {
 		<% for(int i=0; i<list.size(); i++) {
 			Subject subject = list.get(i); %>
 			
-			<tr><td><a href="/registedStu.do?num=<%=subject.getId()%>"><%= subject.getId() %></a></td>
+			<tr><td><a href="/exam0601/registedStu.do?num=<%=subject.getId()%>"><%=subject.getId()%></a></td>
 				<td><%= subject.getName() %></td>
 				<td><%= subject.getCount() %></td>
 				<td><%= subject.getProf() %></td>

@@ -110,7 +110,7 @@ public class ExamDAO {
 		}
 		return subject;
 	}
-
+	
 	public void enroll(String stuId, String subId) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -201,22 +201,25 @@ public class ExamDAO {
 		return list;
 	}
 
-	public ArrayList<Enroll> regiestedStudentList(String num) {
-		ArrayList<Enroll> list = new ArrayList<Enroll>();
+	public ArrayList<Subject> regiestedStudentList(String num) {
+		ArrayList<Subject> list = new ArrayList<Subject>();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		Enroll enroll = null;
+		Subject enroll = null;
 		
 		try {
 			conn = connect();
-			pstmt = conn.prepareStatement("select b.id, b.name from enroll a, student b where a.subject = ? and b.id and a.student;");
+			//pstmt = conn.prepareStatement("select student.id, student.name from student, enroll where enroll.subject = ? and student.id = enroll.student;");
+			pstmt = conn.prepareStatement("select student.id, student.name, subject.id, subject.name from student, enroll, subject where enroll.subject = ? and student.id = enroll.student and subject.id = enroll.subject;");
 			pstmt.setString(1, num);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				enroll = new Enroll();
-				enroll.setSubject(rs.getString(1));
-				enroll.setStudent(rs.getString(2));
+				enroll = new Subject();
+				enroll.setId(rs.getString(1));
+				enroll.setName(rs.getString(2));
+				enroll.setCount(rs.getString(3));
+				enroll.setProf(rs.getString(4));
 				list.add(enroll);
 				}
 		} catch(Exception e) {

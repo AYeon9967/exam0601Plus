@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import exam.service.Service;
 import exam.vo.Subject;
 
+// 교수: 과목 생성하기
 public class InsertSubjectController implements Controller {
 
 	@Override

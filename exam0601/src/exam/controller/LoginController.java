@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import exam.service.Service;
 
+// 로그인
 public class LoginController implements Controller {
 
 	@Override

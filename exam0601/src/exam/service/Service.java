@@ -44,8 +44,8 @@ public class Service {
 		return list;
 	}
 
-	public ArrayList<Enroll> registedStudentList(String num) {
-		ArrayList<Enroll> list = dao.regiestedStudentList(num);
+	public ArrayList<Subject> registedStudentList(String num) {
+		ArrayList<Subject> list = dao.regiestedStudentList(num);
 		return list;
 	}
 

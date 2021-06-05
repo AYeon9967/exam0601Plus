@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import exam.service.Service;
 import exam.vo.Subject;
 
+// 학생: 과목검색
 public class SearchController implements Controller {
 
 	@Override
